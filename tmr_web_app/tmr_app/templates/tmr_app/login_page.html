@@ -36,5 +36,21 @@
             <input type="password" name="password" id="password" />
             <input type="submit" value="Log In" />
         </form>
+        <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Unit ID</th>
+                <th>Unit Name</th>
+              </tr>
+            </thead>
+            <tbody>
+            {% for unit in units %}  
+              <tr>
+                <td>{{unit.id}}</td>
+                <td>{{unit.name}}</td>
+              </tr>
+              {% endfor %} 
+            </tbody>
+        </table>	
     </body>
 </html>

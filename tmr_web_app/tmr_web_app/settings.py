@@ -74,10 +74,33 @@ WSGI_APPLICATION = 'tmr_web_app.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-DATABASES = {
+'''DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'USER': 'root',
+        'PASSWORD': 'rootpass',
+        'HOST': '/var/run/mysql'
+    }
+}'''
+DATABASES = {
+    'default': {
+        'NAME': 'tmr_tracker',
+        'ENGINE': 'mysql.connector.django',
+        'HOST': '127.0.0.1',
+        'PORT': 3306,
+        'USER': 'root',
+        'PASSWORD': 'rootpass',
+        'OPTIONS': {
+          'autocommit': True,
+          'use_oure': True,
+          'init_command': "SET foo='bar';"
+        },
     }
 }
 
